@@ -1,0 +1,143 @@
+    .container {
+        max-width: 960px;
+    }
+
+    /*
+    * Custom translucent site header
+    */
+
+    .site-header {
+        background-color: rgba(0, 0, 0, .85);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+    }
+
+    .site-header a {
+        color: #8e8e8e;
+        transition: color .15s ease-in-out;
+    }
+
+    .site-header a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+    * {
+        font-family: 微軟正黑體;
+    }
+
+    body {
+        background-color: white;
+    }
+
+
+    #forms {
+        margin-bottom: 150px;
+    }
+
+
+
+    /*登入系統*/
+    #petname,
+    #hostname,
+    #inquiredate,
+    #datepicker-start,
+    #datepicker-end {
+        width: 200px;
+        height: 30px;
+        margin: 15px;
+        text-align: left;
+        color: #df5334;
+    }
+
+
+    #container1 {
+        margin: 50px;
+        padding: 30px;
+        width: 800px;
+        height: auto;
+        background-color: white;
+        border-radius: 5px;
+        border-top: 10px solid #df5334;
+        border-bottom: 3px solid #df5334;
+        box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+
+        /*定位對齊*/
+        position: relative;
+        margin: auto;
+        top: 100px;
+        bottom: 100px;
+        text-align: justify;
+    }
+
+    .system_inquire {
+        /*定位對齊*/
+        position: relative;
+        margin: auto;
+        top: 100px;
+        text-align: center;
+    }
+
+    .inquire_page {
+        height: 400px;
+    }
+
+    .submit {
+        color: white;
+        background: #df5334;
+        width: 200px;
+        height: 30px;
+        margin: 10px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 0px;
+    }
+
+    .submit:hover {
+        background: #db6937;
+    }
+
+    .input_group {
+        text-align: justify;
+    }
+
+    #container_box{
+        margin: 200px 200px ;
+        position: relative;
+        height: 1950px;
+        justify-content:center;
+
+    }
+
+
+
+    #recommend_product1,#recommend_product2,#recommend_product3,#recommend_product4,#recommend_product5,#recommend_product6,#recommend_product7,#recommend_product8 {
+
+        padding: 30px;
+        width:auto;
+        height: 450px;
+        background-color: white;
+        border-radius: 5px;
+        border-top: 10px solid #df5334;
+        border-bottom: 3px solid #df5334;
+        box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+        flex-direction:column;
+        flex-wrap:wrap-reverse;
+        text-align:left;
+
+        /*定位對齊*/
+        position: relative;
+        margin:20px ;
+        top: 100px;
+        bottom: 100px;
+    }
+
+    #product_page {
+        margin: 100px;
+        top: 100px
+    }
+
+    /*#diagram {
+       display: none;
+    }*/

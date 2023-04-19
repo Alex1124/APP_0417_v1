@@ -1,0 +1,112 @@
+.container {
+    max-width: 960px;
+  }
+
+  /*
+  * Custom translucent site header
+  */
+
+  .site-header {
+    background-color: rgba(0, 0, 0, .85);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+  .site-header a {
+    color: #8e8e8e;
+    transition: color .15s ease-in-out;
+  }
+  .site-header a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  #
+
+  *{
+  font-family:微軟正黑體;  
+  }
+
+label{
+  display: inline-block;
+  margin: auto;
+}
+  
+body{
+  background-color: rgb(255, 255, 255);
+}
+
+#pet_page{
+  margin-bottom: 200px;
+  width: 100%; 
+  height: auto;
+}
+
+
+#forms{
+  margin-bottom: 50px;
+}
+
+#name, #sex, #age, #weight,#appetite, #water,#pee,#poop,#scratch,#tears,#diarrhea,#vomit,#frequent,#allergen{
+  
+  height: auto;
+  margin: 9px;
+  color: #df5334;
+  vertical-align: middle;
+}
+
+h3{
+  text-align:center;
+}
+
+h4{
+  margin: 20px;
+  text-align: center;
+  color: #1307c0;
+}
+
+h4:hover{
+  color: rgb(232, 90, 8);
+}
+
+
+#container1{
+  margin: auto;
+  padding: 30px;
+  width: 550px;
+  height: auto;
+  background-color: white;
+  border-radius: 5px;
+  border-top: 10px solid #df5334;
+  border-bottom:3px solid #df5334 ;
+  box-shadow: 0 0px 70px rgba(0, 0, 0, 0.1);
+  
+
+  /*定位對齊*/
+  position:relative;   
+  top: 100px;
+  text-align:left;  
+}
+
+
+#subform input[type="text"]{
+  padding: 5px;
+  margin: 5px 5;
+  display:inline-table; 
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+}
+
+#subform input[type="radio"]{
+  vertical-align: middle;
+  padding: 20px;
+  border: none; 
+  border:solid 5px #ccc;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-sizing:border-box;
+}
+
+
+
+

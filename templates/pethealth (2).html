@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Web For Pet">
+  <title>Product example · Bootstrap v5.3</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+  <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+  
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='pethealth.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  
+
+</head>
+
+
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <header class="site-header sticky-top py-1">
+    <nav class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">網站介紹</a>
+      <a class="py-2 d-none d-md-inline-block" href="login.html">登入/註冊</a>
+      <a class="py-2 d-none d-md-inline-block" href="pethealth.html">寵物狀況記錄</a>
+      <a class="py-2 d-none d-md-inline-block" href="inquire.html">貓咪狀況查詢</a>
+      <a class="py-2 d-none d-md-inline-block" href="recommend.html">貓咪產品推薦</a>
+      
+    </nav>
+  </header>
+  
+    
+  <body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <form name="form" id="forms">
+      <div class="pet_page" id="pet_page" name="pet_page">
+        <div id="container1">
+          
+            <h3>貓咪狀況紀錄</h3>
+            <hr> 
+
+            <form action="" method="post" id="subform" >
+              <ul>
+                <label>主人姓名:</label>
+                <input  type="text" id='username' name="寵物姓名" placeholder="請輸入主人姓名" required><br>
+              </ul>   
+              <ul>
+                <label>寵物姓名:</label>
+                <input  type="text" id='petname' name="寵物姓名" placeholder="請輸入寵物姓名" required><br>
+              </ul>     
+
+              <ul>
+                <div class="input-group">
+                  <label for="datepicker-day">紀錄日期:</label>
+                  <input type="text" class="form-control datepicker" id="datepicker-day" name="pick_date" >
+                </div>
+                </ul>
+
+              <ul>
+                <label>寵物性別:</label>
+                <input type="radio" id="sex" name="sex" value="male" required>男生
+                <input type="radio" id="sex" name="sex" value="female" required>女生
+                <br>
+              </ul>    
+
+              <ul>
+                <label>寵物年齡:</label>
+                <input type="radio" id="age" name="age" value="age" required>幼貓
+                <input type="radio" id="age" name="age" value="age" required>成貓
+                <input type="radio" id="age" name="age" value="age" required>高齡貓<br>
+                <span style="display: inline; margin-left: 20px; ">幼貓小於一歲 , 高齡貓高於7歲</span>
+              </ul>
+
+              <ul>
+                <label>寵物體重:</label>
+                <input type="radio" id="weight" name="weight" value="weight" required>幼貓
+                <input type="radio" id="weight" name="weight" value="weight"required>成貓、高齡貓<br>
+                <span style="display: inline; margin-left: 20px; ">幼貓約小於4公斤 成貓高齡貓約3~6公斤</span>
+                
+                
+              </ul>
+
+              <ul>
+                <label>寵物飯量:</label><input type="radio" id="appetite" name="appetite" value="normal" required>正常
+                <input type="radio"id="appetite" name="appetite" value="abnormal" required>不正常<br>
+                <span style="display: inline; margin-left: 20px; ">依最近餵食情況而定</span>
+              </ul>
+
+              <ul>
+                <label>喝水量 :</label><input type="radio" id="water" name="water" value="normal" required>正常
+                <input type="radio" id="water" name="water" value="abnormal" required>不正常<br>
+                <span style="display: inline; margin-left: 20px; ">依最近餵食情況而定 (建議:貓咪體重(kg)×50(ml))</span>
+              </ul>
+
+              <ul>
+                <label>小便次數:</label><input type="radio" id="pee" name="pee" value="normal" required>正常
+                <input type="radio" id="pee" name="pee" value="abnormal" required>不正常<br>
+                <span style="display: inline; margin-left: 20px; ">凝固貓砂的數量 小於1或大於7</span>
+              </ul>
+
+              <ul>
+                <label>便便次數</label>:<input type="radio" id="poop" name="poop" value="normal" required>正常
+                <input type="radio" id="poop" name="poop" value="abnormal" required>不正常<br>
+                <span style="display: inline; margin-left: 20px; ">正常:2cm/顆 3~15 不正常:一至兩次，每次長度大約5~10cm </span>
+              </ul>
+
+              <ul>
+                <label>時常抓癢:</label><input type="radio" id="scratch" name="scratch" value="normal" required>是
+                <input type="radio"  id="scratch" name="scratch" value="abnormal" required>否
+                <span style="display: inline; margin-left: 20px; " ></span><br>
+              </ul>
+
+              <ul>
+                <label>流眼淚:</label>
+                <input type="radio" id="tears" name="tears" value="normal" required>是
+                <input type="radio" id="tears" name="tears" value="abnormal" required>否
+                <span style="display: inline; margin-left: 20px; "></span><br>
+              </ul>
+
+              <ul>
+                <label>拉稀:</label><input type="radio" id="diarrhea" name="diarrhea" value="normal" >是
+                <input type="radio" id="diarrhea" name="diarrhea" value="abnormal">否
+                <span style="display: inline; margin-left: 20px; "></span><br>
+              </ul>
+
+              <ul>
+                <label>嘔吐:</label><input type="radio" id="vomit" name="vomit" value="normal" >是
+                <input type="radio" id="vomit" name="vomit" value="abnormal">否
+                <span style="display: inline; margin-left: 20px; "></span><br>
+              </ul>
+
+              <ul>
+                <label>頻尿:</label><input type="radio" id="frequent" name="frequent" value="normal" >是
+                <input type="radio" id="frequent" name="frequent" value="abnormal">否
+                <span style="display: inline; margin-left: 20px; "></span><br>
+              </ul>
+
+              <ul>
+                <input type="text" id="input-data" name="input-data" />
+                <button type="button" onclick="addRecord()">增加過敏原</button><br>
+                <label id="record-list" name="record-list">過敏原:</label>
+                <input type="hidden" id="record-list-input" name="record-list-input" />
+              </ul>
+
+              <hr>
+
+              <h4 onclick="sendout()" type="submit" id="submit" value="儲存資料">儲存資料</h4>
+              
+            </form>
+        </div>
+      </div>
+    </form>
+</div>
+  
+            
+    <footer class="p-4 border-top">
+        <div class="container d-flex align-items-center justify-content-between">
+            <ul class="nav">
+                <li class="nav-item"><a href="" class="nav-link text-muted">關於本站</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+          <small class="d-block mb-3 text-muted">&copy; 2023</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Introduce</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Cool stuff</a></li>
+            <li><a class="link-secondary" href="#">Random feature</a></li>
+            <li><a class="link-secondary" href="#">Team feature</a></li>
+            <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+            <li><a class="link-secondary" href="#">Another one</a></li>
+            <li><a class="link-secondary" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Product</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Resource name</a></li>
+            <li><a class="link-secondary" href="#">Resource</a></li>
+            <li><a class="link-secondary" href="#">Another resource</a></li>
+            <li><a class="link-secondary" href="#">Final resource</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>login</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Business</a></li>
+            <li><a class="link-secondary" href="#">Education</a></li>
+            <li><a class="link-secondary" href="#">Government</a></li>
+            <li><a class="link-secondary" href="#">Gaming</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>Recoding</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="link-secondary" href="#">Team</a></li>
+            <li><a class="link-secondary" href="#">Locations</a></li>
+            <li><a class="link-secondary" href="#">Privacy</a></li>
+            <li><a class="link-secondary" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    
+    
+    <script>
+      function addRecord() {
+        var recordListLabel = document.getElementById("record-list");
+        var recordListInput = document.getElementById("record-list-input");
+        recordListInput.value = recordListLabel.textContent;
+        // 取得輸入資料
+        const inputData = document.getElementById("input-data").value;
+
+        // 如果輸入資料為空或全是空白，則不處理
+        if (!inputData.trim()) {
+          return;
+        }
+
+        // 將輸入資料加入紀錄列表
+        const recordList = document.getElementById("record-list");
+        const recordItem = document.createElement("label");
+        recordItem.innerText = inputData.replace(/\s/g, '')+'、';
+        recordList.appendChild(recordItem);
+
+        // 清空輸入資料方框
+        document.getElementById("input-data").value = "";
+      }
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('.datepicker').datepicker({
+          format: 'yyyy-mm-dd',
+          autoclose: true,
+          todayHighlight: true
+        });
+      });
+      </script>
+    <!-- <script>
+      function sendout() {
+      var container1 = document.getElementById("subform");
+      
+          document.getElementById("name").value="";
+          document.getElementById("sex").value="";
+          document.getElementById("date").value="";
+          document.getElementById("weight").value="";
+          document.getElementById("appetite").value="";
+          document.getElementById("water").value="";
+          document.getElementById("pee").value="";
+          document.getElementById("poop").value="";
+          document.getElementById("scratch").value="";
+          document.getElementById("tears").value="";
+          document.getElementById("diarrhea").value="";
+          document.getElementById("vomit").value="";
+          document.getElementById("frequent").value="";
+          document.getElementById("allergen").value="";
+          document.getElementById("water").value="";
+          console.log(name,);
+          
+        }
+      
+    </script>     -->
+    </script>    
+  </body>
+
+</html>

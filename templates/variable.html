@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--標題-->
+    <title>python處理好的變數傳遞</title>
+    <!--連結外部樣式 css-->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">      
+
+</head>
+<body>
+    <h1>名字: {{user.name}}</h1>
+    <h1>語言: {{language.1}}</h1>
+    <h1>分數: {{user.score}}</h1>
+    <hr>
+
+    <!--if endif -->
+ 
+    {% if user.score >= 60%}
+        <h2>分數: {{user.score}}, 有及格</h2>
+    {% endif %}
+
+    <!--if else endif -->
+    <hr>
+    {% if user.score >= 60%}
+        <h2>分數: {{user.score}}, 有及格</h2>
+    {% else %}
+        <h2>分數: {{user.score}}, 不及格</h2>
+    {% endif %}
+
+
+    <!--if elif else endif -->
+    <hr>
+    {% if user.score >= 90%}
+        <h2>分數: A</h2>
+    {% elif user.score >= 80%}
+        <h2>分數: B</h2>
+    {% elif user.score >= 70%}
+        <h2>分數: C</h2>
+    {% elif user.score >= 60%}
+        <h2>分數: D</h2>
+    {% else %}
+        <h2>分數: E</h2>
+    {% endif %}
+    <hr>
+
+    {% for i in list1 %}
+        {{i}},
+    {% endfor %}
+
+    <hr>
+
+    <!--for 迴圈 -->
+    <h3>
+        {% for u in users %}
+            <ul>
+                <li>ID：{{u.id}}</li>
+                <li>Name：{{u.name}}</li>
+                <li>City：{{u.city}}</li>
+                <li>Score：{{u.score}}</li>
+            </ul>
+        {% endfor %}
+        
+        </h3>
+
+    <hr>  <!--hr水平線 -->
+
+    <table border="1">  <!--table 表格-->
+        {% for u in users %}
+        <tr> <!--tr 一列-->
+            
+            <td>ID：{{u.id}}</td>       <!--td 一列有幾格?-->
+            <td>Name：{{u.name}}</td>
+            <td>City：{{u.city}}</td>
+            <td>Score：{{u.score}}</td>
+           
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

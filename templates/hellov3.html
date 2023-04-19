@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='login.css')}}"/>
+
+
+      <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+      <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+      <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+      <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+      <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+      <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+
+      <link href="{{url_for('static', filename='index.css')}}" rel="stylesheet">
+
+      <!-- Custom styles for this template -->
+      <link href="{{url_for('static', filename='product.css')}}" rel="stylesheet">
+    <title>Hello</title>
+</head>
+<body>
+    
+    <h1><img src="{{url_for('static', filename='upload/flask.png')}}" width="20%" height="20%"/>
+        <br>
+         {{name}} ~⧸⎩⎠⎞͏(・∀・)⎛͏⎝⎭⧹這是 Flask 網站 </h1>
+    <h1>歡迎光臨</h1>
+    <p>現在時間{{now}}</p>
+    <hr>
+    <div class="container">
+        <br>
+            <img src="{{ user_image }}"  alt="" width="50%" height="20%">
+            <br><br>
+            <a href='/upload' ><button id="#testbtn" type="button" value="BACK" class="btn btn-outline-secondary" >back</button> </a>
+        <br>
+
+    </div>
+
+    <hr>
+    <br>
+    
+
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+
+        <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+
+            <!--url_for('view資料夾底下檔案中blueprint宣告的物件名稱.檔案中的function名稱')
+            "Italian Trulli" -->
+            <a href="{{url_for('recommend_page.recommend')}}">貓咪專題的隨機產品推薦</a>
+            <br><br>
+            <a href="{{url_for('plotly_sample.scatter', username='劉俐彤')}}">圖表測試plotly</a>
+            <br><br>
+            <a href="https://sites.google.com/jes.mlc.edu.tw/ljj/linebot%E5%AF%A6%E5%81%9A/%E5%A6%82%E4%BD%95%E7%94%A8linebot%E5%8F%96%E4%BB%A3google%E8%A1%A8%E5%96%AE">google表單line bot 問卷</a>
+            <br>
+            
+            <a href="https://www.runoob.com/html/html-links.html">HTML/CSS教學</a>
+            <br>
+            <a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web/JavaScript_basics">JavaScript 基礎</a>
+            <br>
+            <br>
+            <a href="https://ithelp.ithome.com.tw/articles/10208174">同步(synchronous) vs 非同步(asynchronous)</a>
+            <br> 
+            <a href="https://developer.mozilla.org/zh-TW/docs/Learn/JavaScript/Asynchronous/Introducing">非同步的 JavaScript 介紹</a>
+            <br>
+            
+        </div>
+
+        <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <a href="https://flask.palletsprojects.com/en/2.2.x/">Flask sdk教學</a>
+            <br>
+            <a href="https://www.delftstack.com/zh-tw/howto/python-flask/flask-url_for/">URL導向教學</a>
+            <br>
+            <a href="{{url_for('variables_test.variables')}}">練習變數傳遞與表格清單呈現Variables</a>
+            <br>
+            <a href="https://dormousehole.readthedocs.io/en/latest/config.html">Flask config教學</a>
+            <br>
+            <a href="https://ithelp.ithome.com.tw/articles/10262877">Flask 基本設定</a>
+            <br>
+            <a href="https://hackmd.io/@shaoeChen/ryXdT527z?type=view">Flask 工廠設定 config blueprint</a>
+            <br>
+            
+        </div>
+
+    </div> 
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+
+        <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+
+    
+            <a href="https://plotly.com/python/subplots/">subplots</a>
+            <br>
+            
+        </div>
+
+        <div class="text-bg-primary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <a href="https://www.fooish.com/html/iframe-tag.html">iframe</a>
+            <br>
+            
+            
+        </div>
+
+    </div> 
+    
+
+
+
+    <!--url_for('view資料夾底下檔案中blueprint宣告的物件名稱.檔案中的function名稱') -->
+
+    
+
+</body>
+</html>

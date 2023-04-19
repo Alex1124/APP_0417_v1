@@ -1,0 +1,17 @@
+﻿# pip install pipreqs
+# pipreqs --encoding utf-8
+# pip install -r –upgrade requirements.txt
+
+
+Flask==1.1.2
+Flask_Mail==0.9.1
+flask_sqlalchemy==3.0.3
+Flask_WTF==1.1.1
+ipython==8.12.0
+numpy==1.21.5
+pandas==1.4.2
+plotly==5.6.0
+pymssql==2.2.7
+scikit_learn==1.2.2
+Werkzeug==2.0.3
+WTForms==3.0.1

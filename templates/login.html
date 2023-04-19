@@ -1,0 +1,428 @@
+<!--登入頁面 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free Web For Pet">
+  <meta name="author" content="Ying Wen">
+  <title>login</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+
+
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='login.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+</head>
+
+
+
+
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('index_page.first')}}">網站介紹</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('login_page.signup')}}">登入/註冊</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('pethealth.index')}}">寵物狀況記錄</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('recommend_page.query')}}">貓咪狀況查詢</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('recommend_page.recommend')}}">貓咪產品推薦</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('login_page.logout')}}">登出</a>
+
+  </nav>
+</header>
+
+
+
+<body>
+  <div class="system_name">
+    <h2>登入系統</h2>
+  </div>
+
+  <div class="login_page">
+    <div id="container1">
+
+      <div class="login">
+
+        <h3>登入</h3>
+
+        <form method="post">
+          帳號:<input type="text" id="username" name="account" placeholder="帳號" required>
+          <div class="tab"></div>
+          密碼:<input type="password" id="password" name="password" placeholder="密碼" required>
+          <div class="tab"></div>
+
+          <!--以下透過 JavaScript 的 location.href 指派網址
+            1. 瀏覽器不會送出 Referer 這個 HTTP Header
+            2. 瀏覽器會紀錄連結的歷史紀錄 ( 好讓瀏覽器的"上一頁"、 "下一頁" 按鈕可以運作)
+            -->
+          <!--連結的用法
+            1. src是指向物件的來源
+            2. href是指向需要連結的地方，會跳轉
+            -->
+          <button type="submit" id='btn' class="submit"  style="text-align:center" >提交</button>
+          <!-- <input type="submit" value="登入" class="submit" style="text-align:center">-->
+          
+
+
+        </form>
+
+
+        <h5 onclick="show_hide()">註冊帳號</h5>
+
+      </div><!-- login end-->
+    </div><!-- container1 end-->
+  </div><!-- login_page end-->
+
+  <div class="signup_page" >
+  <div class="container2" id="container2">
+
+    <div class="signup" style="text-align: center;">
+
+      <h3>註冊 Sign Up</h3>
+
+      <form method="POST" action="">
+        <table>
+          <tr>
+            <td height="35" nowrap valign="top">姓名：</td>
+            <td valign="left" valign="top">
+              <div class=DivSpanTop>
+                <span>
+                  <input type="text" id="fullname" name="fullname" placeholder="姓名" required>
+                </span>
+          </tr>
+
+          <tr>
+            <td height="35" nowrap valign="top">帳號：</td>
+            <td valign="left" valign="top">
+              <div class=DivSpanTop>
+                <span><input type="text" id="account" name="account" placeholder="帳號" required></span>
+          </tr>
+
+          <tr>
+            <td height="35" nowrap valign="top">Email:</td>
+            <td valign="left" valign="top">
+              <div class=DivSpanTop>
+                <span><input type="email" id="email" name="email" placeholder="Email" required></span>
+          </tr>
+
+          <tr>
+            <td height="35" nowrap valign="top">密碼：</td>
+            <td valign="left" valign="top">
+              <div class=DivSpanTop>
+                <span><input type="password" id="password" name="password" placeholder="密碼" required></span>
+          </tr>
+
+          <tr>
+            <td height="35" nowrap valign="top">確認密碼：</td>
+            <td valign="left" valign="top">
+              <div class=DivSpanTop>
+                <span><input type="password" id="comfirm_password" name="comfirm_password" placeholder="確認密碼"
+                    required></span>
+          </tr>
+
+          <tr>
+            <td height="35" nowrap valign="top">驗證碼：</td>
+            <td valign="center" valign="bottom">
+              <div class="code" onclick="">
+                <span>
+                  <input type="text" value="" placeholder="請輸入驗證碼" class="input-val">
+                  <canvas id="canvas" onclick="" width="100" height="30"></canvas>
+                  <button type="submit" id='btn' class="btn" >提交</button>
+                </span>
+
+              </div>
+            </td>
+          </tr>
+          
+        </table>
+      </form>
+      <!--再寫一個註冊成功跳回首頁-->
+      <button type="submit" name="Submit" value="submit" class="submit"  
+        style="text-align:center" >            
+            <h5 onclick=" show_hide()">登入帳號</h5></button>
+            
+    </div><!-- signup end-->
+  </div><!-- container2 end-->
+  </div><!-- signup_page end-->
+
+  <!-- 偵測是否重複 -->
+  <!-- <script>
+    $('#username2').on('input', function() {
+        var email = $(this).val();
+
+        $.ajax({
+            url: '/check_email',
+            method: 'POST',
+            data: { email: email },
+            success: function(data) {
+                if (data.exists) {
+                    $('#username2-tip').text('信箱已存在');
+                } else {
+                    $('#username2-tip').text('');
+                }
+            }
+        });
+    });
+    $('#username1').on('input', function() {
+        var account = $(this).val();
+
+        if (account.length > 15) {
+          $('#username-tip').text('帳號長度不能超過15個字元');
+          return;
+        }
+        $.ajax({
+            url: '/check_account',
+            method: 'POST',
+            data: { account: account },
+            success: function(data) {
+                if (data.exists) {
+                    $('#username1-tip').text('帳號已存在');
+                } else {
+                    $('#username1-tip').text('');
+                }
+            }
+        });
+    });
+    $('#password2').on('input', function() {
+        var password = $(this).val();
+
+        if (password.length > 15) {
+            $('#password-tip').text('密碼長度不能超過15個字元');
+            return;
+        }
+
+        // 在這裡添加檢查密碼是否重複的代碼
+    });
+    
+  </script> -->
+
+  <!--切換註冊、登入頁面-->
+  <script>
+    function show_hide() {
+      var login = document.getElementById("container1");
+      var signup = document.getElementById("container2");
+
+      if (login.style.display === "none") {
+        login.style.display = "block";  //login出現
+        document.getElementById("username").value = "";
+        document.getElementById("password").value = "";
+        signup.style.display = "none";  //signup消失
+        //copyright.style.margin = "200px 0px 0px 0px";
+      } else {
+        login.style.display = "none";   //login消失
+        signup.style.display = "block"; //signup出現
+        signup.style.visibility = "visible";
+        //copyright.style.margin = "200px 0px 0px 0px";
+
+        document.getElementById("fullname").value = "";
+        document.getElementById("username1").value = "";
+        document.getElementById("username2").value = "";
+        document.getElementById("password2").value = "";
+        document.getElementById("comfirm_password").value = "";
+      }
+    }
+  </script>
+
+  <!--驗證碼-->
+  <script>
+    $(function () {
+      var show_num = [];
+      draw(show_num);
+      $("#canvas").on('click', function () {
+        draw(show_num);
+      })
+      $(".btn").on('click', function () {
+        var val = $(".input-val").val().toLowerCase();
+        var num = show_num.join("");
+        if (val == '') {
+          alert('請輸入驗證碼！');
+        } else if (val == num) {
+          alert('提交成功！');
+          $(".input-val").val('');
+          // draw(show_num);
+        } else {
+          alert('驗證碼錯誤！請重新輸入！');
+          $(".input-val").val('');
+          // draw(show_num);
+        }
+      })
+    })
+
+    //生成並渲染出驗證碼圖形
+    function draw(show_num) {
+      var canvas_width = $('#canvas').width();
+      var canvas_height = $('#canvas').height();
+      var canvas = document.getElementById("canvas");//獲取到canvas的對象
+      var context = canvas.getContext("2d");//獲取到canvas畫圖的環境
+      canvas.width = canvas_width;
+      canvas.height = canvas_height;
+      var sCode = "a,b,c,d,e,f,g,h,i,j,k,m,n,p,q,r,s,t,u,v,w,x,y,z,A,B,C,E,F,G,H,J,K,L,M,N,P,Q,R,S,T,W,X,Y,Z,1,2,3,4,5,6,7,8,9,0";
+      var aCode = sCode.split(",");
+      var aLength = aCode.length;//獲取到數組的長度
+      for (var i = 0; i < 4; i++) { //這裏的for循環可以控制驗證碼位數,顯示幾位數
+        var j = Math.floor(Math.random() * aLength);//獲取到隨機的索引值
+        var deg = Math.random() * 30 * Math.PI / 180;//產生0~30之間的隨機弧度
+        var deg = Math.random() - 0.5; //產生一個隨機弧度
+        var txt = aCode[j];//得到隨機的一個內容
+        show_num[i] = txt.toLowerCase();
+        var x = 10 + i * 20;//文字在canvas上的x座標
+        var y = 20 + Math.random() * 8;//文字在canvas上的y座標
+        context.font = "bold 23px 微軟正黑";
+        context.translate(x, y);
+        context.rotate(deg);
+        context.fillStyle = randomColor();
+        context.fillText(txt, 0, 0);
+        context.rotate(-deg);
+        context.translate(-x, -y);
+      }
+      for (var i = 0; i <= 5; i++) { //驗證碼上顯示線條
+        context.strokeStyle = randomColor();
+        context.beginPath();
+        context.moveTo(Math.random() * canvas_width, Math.random() * canvas_height);
+        context.lineTo(Math.random() * canvas_width, Math.random() * canvas_height);
+        context.stroke();
+      }
+      for (var i = 0; i <= 30; i++) { //驗證碼上顯示小點
+        context.strokeStyle = randomColor();
+        context.beginPath();
+        var x = Math.random() * canvas_width;
+        var y = Math.random() * canvas_height;
+        context.moveTo(x, y);
+        context.lineTo(x + 1, y + 1);
+        context.stroke();
+      }
+    }
+    //得到隨機的顏色值
+    function randomColor() {
+      var r = Math.floor(Math.random() * 256);
+      var g = Math.floor(Math.random() * 256);
+      var b = Math.floor(Math.random() * 256);
+      return "rgb(" + r + "," + g + "," + b + ")";
+    }
+  </script>
+
+
+  <footer class="p-10">
+    <div class="container d-flex align-items-center justify-content-between">
+      <ul class="nav">
+        <li class="nav-item"><a href="" class="nav-link text-muted">關於本站</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <footer class="container py-5">
+    <div class="row">
+
+      <div class="col-6 col-md">
+        <h5>Introduce</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Product</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>login</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Business</a></li>
+          <li><a class="link-secondary" href="#">Education</a></li>
+          <li><a class="link-secondary" href="#">Government</a></li>
+          <li><a class="link-secondary" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Recoding</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>寵物比價網</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    
+    <!--Custom styles for bootstrap -->
+    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+
+    <link rel="stylesheet" type="text/css" type="text/css" href="{{ url_for('static', filename='index.css') }}" >
+    <!-- Custom styles for this template -->
+    <link rel="'stylesheet" type="text/css" href="{{ url_for('static', filename='login.css') }}" >
+    <!--Custom styles for pyscript -->
+    <!--<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
+    
+</head>
+
+<header class="site-header sticky-top py-1">
+  <nav class="container d-flex flex-column flex-md-row justify-content-between">
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('index_page.first')}}">網站介紹</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('login_page.signup')}}">登入/註冊</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('pethealth.index')}}">寵物狀況記錄</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('recommend_page.query')}}">貓咪狀況查詢</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('recommend_page.recommend')}}">貓咪產品推薦</a>
+    <a class="py-2 d-none d-md-inline-block" href="{{url_for('login_page.logout')}}">登出</a>
+
+  </nav>
+</header>
+
+
+<body>
+    <div class="system_name">
+      <h2>登入系統</h2>
+    </div>
+    
+    <div class="verify_page">
+      <div id="container1">
+
+        <div class="login">  
+          
+          <h3>Email驗證</h3>
+
+          <form method="post" action="">
+            Email驗證碼輸入:<input type="text" id="verify" name="verification_code" placeholder="Email驗證碼輸入"  required>
+            <button type="submit"  class="btn btn-primary"  >分析</button>
+
+
+          </form>  
+            
+          
+
+          
+        </div><!-- login end-->
+      </div><!-- container1 end-->
+    </div><!-- login_page end-->
+
+      
+  
+  <hr>
+  <footer class="p-10">
+      <div class="container d-flex align-items-center justify-content-between">
+          <ul class="nav">
+              <li class="nav-item"><a href="" class="nav-link text-muted">關於本站</a></li>
+          </ul>
+      </div>
+  </footer>
+  
+  <footer class="container py-5">
+    <div class="row" >
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+        <small class="d-block mb-3 text-muted">&copy; 2023</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Introduce</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Cool stuff</a></li>
+          <li><a class="link-secondary" href="#">Random feature</a></li>
+          <li><a class="link-secondary" href="#">Team feature</a></li>
+          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
+          <li><a class="link-secondary" href="#">Another one</a></li>
+          <li><a class="link-secondary" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Product</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Resource name</a></li>
+          <li><a class="link-secondary" href="#">Resource</a></li>
+          <li><a class="link-secondary" href="#">Another resource</a></li>
+          <li><a class="link-secondary" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>login</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Business</a></li>
+          <li><a class="link-secondary" href="#">Education</a></li>
+          <li><a class="link-secondary" href="#">Government</a></li>
+          <li><a class="link-secondary" href="#">Gaming</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Recoding</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary" href="#">Team</a></li>
+          <li><a class="link-secondary" href="#">Locations</a></li>
+          <li><a class="link-secondary" href="#">Privacy</a></li>
+          <li><a class="link-secondary" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
