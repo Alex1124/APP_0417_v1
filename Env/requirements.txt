@@ -1,6 +1,6 @@
 ﻿# pip install pipreqs
 # pipreqs --encoding utf-8
-# pip install -r –upgrade requirements.txt
+# pip install --upgrade -r requirements.txt
 
 
 Flask==1.1.2
