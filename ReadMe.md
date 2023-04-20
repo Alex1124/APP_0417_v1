@@ -1,4 +1,12 @@
 <hr>
+GITHUB版本管理教學
+https://backlog.com/git-tutorial/tw/intro/intro2_4.html
+https://ithelp.ithome.com.tw/articles/10267030
+
+
+部署平台Render 官方教學
+https://render.com/docs/deploy-flask
+<hr>
 
 2023-04-09
 
