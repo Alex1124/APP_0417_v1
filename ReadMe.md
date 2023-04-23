@@ -2,6 +2,15 @@
 
 ![1682247090906](image/ReadMe/1682247090906.png)
 <hr>
+GITHUB版本管理教學<br>
+https://backlog.com/git-tutorial/tw/intro/intro2_4.html
+<br>
+https://ithelp.ithome.com.tw/articles/10267030
+
+
+部署平台Render 官方教學
+https://render.com/docs/deploy-flask
+<hr>
 
 2023-04-09
 
