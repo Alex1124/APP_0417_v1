@@ -4358,3 +4358,55 @@ Name: count, dtype: int64
 1     AF2 NaN    AFreschi     AFreschi 艾富鮮 小春日和 貓主食罐 貓咪 主食罐 貓罐 80g，雞肉、鮪魚、巴沙魚   主食罐   成貓  10_15-21-39-15.jpg   35         蝦皮商城                雞肉            鮪魚      巴沙魚                                  雞湯   鮪魚湯   葛粉   魚油    洋菜   牛磺酸   碳酸鈣  綜合維生素   B群  維生素E   nan    nan
 7     AH4 NaN        超越巔峰  超越巔峰主食貓罐 雞肉/鮭魚/鮪魚/龍蝦/鵪鶉蛋/魚子醬 80g 貓咪罐頭 挑嘴貓 主食罐頭...   主食罐   成貓  28_15-21-39-45.jpg   40         蝦皮商城               雞肉絲            雞心       雞肝                                  雞胗   鵪鶉蛋    水  木薯粉  瓜爾豆膠  維生素E   果寡糖    牛磺酸  nan   nan   nan    nan
 34  DCS10 NaN  DogCatStar                            汪喵星球-免疫力提升保養粉(50顆) X 1入  保健食品  全齡貓           DCS10.PNG  880      樂天市場購物網         高濃度有機褐藻醣膠  B-1,3-1,6葡聚醣  黑酵母乳鐵蛋白  KT-11捲曲乳桿菌 Lactobacillus crispatus  膳食纖維  nan  nan   nan   nan   nan    nan  nan   nan   nan    nan
+
+2023-04-22 22:42:45,374 - dev - ERROR - 請先執行資料的預存程序!!
+Catch an exception.(pymssql._pymssql.ProgrammingError) (208, b"Invalid object name '##product_price'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[SQL: select * from ##product_price]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+Traceback (most recent call last):
+  File "src\pymssql\_pymssql.pyx", line 459, in pymssql._pymssql.Cursor.execute
+  File "src\pymssql\_mssql.pyx", line 1087, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1118, in pymssql._mssql.MSSQLConnection.execute_query
+  File "src\pymssql\_mssql.pyx", line 1251, in pymssql._mssql.MSSQLConnection.format_and_run_query
+  File "src\pymssql\_mssql.pyx", line 1789, in pymssql._mssql.check_cancel_and_raise
+  File "src\pymssql\_mssql.pyx", line 1835, in pymssql._mssql.raise_MSSQLDatabaseException
+pymssql._mssql.MSSQLDatabaseException: (208, b"Invalid object name '##product_price'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 476, in pymssql._pymssql.Cursor.execute
+pymssql._pymssql.ProgrammingError: (208, b"Invalid object name '##product_price'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "d:\APP_0417_v2\APP_0417_v1\view\load_db.py", line 45, in load_files
+    product = db.engine.execute(sql)
+  File "<string>", line 2, in execute
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\util\deprecations.py", line 402, in warned
+    return fn(*args, **kwargs)
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 3257, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 1365, in execute
+    return self._exec_driver_sql(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 1669, in _exec_driver_sql
+    ret = self._execute_context(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\util\compat.py", line 210, in raise_
+    raise exception
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\user\AppData\Local\conda\conda\envs\tf-gpu\lib\site-packages\sqlalchemy\engine\default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+  File "src\pymssql\_pymssql.pyx", line 476, in pymssql._pymssql.Cursor.execute
+sqlalchemy.exc.ProgrammingError: (pymssql._pymssql.ProgrammingError) (208, b"Invalid object name '##product_price'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+[SQL: select * from ##product_price]
+(Background on this error at: https://sqlalche.me/e/14/f405)
